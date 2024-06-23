@@ -1,0 +1,40 @@
+<h1 class="center">Ranking Data for
+  <%= ranking.name %>
+</h1>
+
+<table class="table">
+  <tr>
+    <th>Name</th>
+    <td>
+      <%= ranking.name %>
+    </td>
+  </tr>
+  <tr>
+    <th>Email</th>
+    <td>
+      <%= ranking.email%>
+    </td>
+  </tr>
+  <tr>
+    <th>Zip Code</th>
+    <td>
+      <%= ranking.zipCode%>
+    </td>
+  </tr>
+</table>
+
+<p>This ranking has
+  <%= ranking.courses.length %> associated course(s)
+</p>
+
+<div>
+  <a class="button" href="<%=`/rankings/${ranking._id}/edit`%>">
+    Edit Ranking Details
+  </a>
+</div>
+<div>
+  <a class="button" href="<%= `/rankings/${ranking._id}/delete?_method=DELETE` %>" onclick="return confirm('Are you sure you want to delete this record?')" a>Delete</a>
+</div>
+<div>
+  <a class="button" href="/rankings">View all rankings</a>
+</div>
